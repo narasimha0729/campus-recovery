@@ -1,0 +1,150 @@
+/* Full page layout with a premium CSS-only background */
+:root {
+  --primary-color: #6c5ce7;
+  --secondary-color: #a29bfe;
+  --accent-color: #8e44ad;
+  --bg-gradient: radial-gradient(circle at 10% 20%, #f0f7ff 0%, #e0f2ff 90%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow-premium: 0 20px 40px rgba(108, 92, 231, 0.1);
+  --text-dark: #2d3436;
+  --text-muted: #636e72;
+}
+
+.theme-layout {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-dark);
+}
+
+.premium-bg {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Enhanced Glass Card */
+.theme-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  border-radius: 28px;
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-premium);
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-card h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+/* Detail Box based on user screenshot */
+.detail-box {
+  background: rgba(108, 92, 231, 0.04);
+  border-left: 5px solid var(--primary-color);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.detail-box:hover {
+  background: rgba(108, 92, 231, 0.08);
+  transform: translateX(4px);
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.detail-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Premium Gradient Button */
+.theme-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(108, 92, 231, 0.25);
+  display: inline-block;
+}
+
+.theme-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(108, 92, 231, 0.35);
+  filter: brightness(1.1);
+}
+
+.secondary-btn {
+  background: rgba(108, 92, 231, 0.08);
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Standard Inputs */
+.form-control {
+  border-radius: 14px !important;
+  padding: 12px 18px !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.06) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1) !important;
+  outline: none;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
